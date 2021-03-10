@@ -107,33 +107,22 @@ const deleteButtons = [
 ];
 for (let i = 0; i < deleteButtons.length; i++) {
   deleteButtons[i].innerText = `Delete`;
+  deleteButtons[i].type = `button`;
+  deleteButtons[i].classList.add('delete');
 }
 for (let i = 0; i < divCards.children.length; i++) {
   divCards.children[i].insertAdjacentElement('beforeend', deleteButtons[i]);
 }
 
-// const buttonsHTML = [
-// `<button>Delete</button>`,
-// `<button>Delete</button>`,
-// `<button>Delete</button>`,
-// `<button>Delete</button>`
-// ];
-
-// const deleteButtonsFragment0 = document.createRange().createContextualFragment(buttonsHTML[0]);
-// const deleteButtonsFragment1 = document.createRange().createContextualFragment(buttonsHTML[1]);
-// const deleteButtonsFragment2 = document.createRange().createContextualFragment(buttonsHTML[2]);
-// const deleteButtonsFragment3 = document.createRange().createContextualFragment(buttonsHTML[3]);
-// const button0 = deleteButtonsFragment0.querySelector('button');
-// const button1 = deleteButtonsFragment0.querySelector('button');
-// const button2 = deleteButtonsFragment0.querySelector('button');
-// const button3 = deleteButtonsFragment0.querySelector('button');
-
-
 // select all the buttons!
+const buttons = divCards.querySelectorAll('.delete');
 // make out delete function
 function deleteCard() {
-  cards[0].remove();
+  console.log('To be deleted!');
+  const button = divCards.querySelector('button');
+  button.parentElement.remove();
 }
-// loop over them and attach a listener
-// deleteButtons[0].onclick = deleteCard();
 
+// loop over them and attach a listener
+// deleteButtons[0].addEventListener('click', deleteCard);
+buttons.forEach(gimbemgombomakarhogyhivhatom => gimbemgombomakarhogyhivhatom.addEventListener('click', deleteCard));
