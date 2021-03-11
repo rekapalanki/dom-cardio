@@ -106,7 +106,7 @@ const deleteButtons = [
   document.createElement('button'),
 ];
 for (let i = 0; i < deleteButtons.length; i++) {
-  deleteButtons[i].innerText = `Delete`;
+  deleteButtons[i].innerText = `Hide`;
   deleteButtons[i].type = `button`;
   deleteButtons[i].classList.add('delete');
 }
@@ -117,10 +117,11 @@ for (let i = 0; i < divCards.children.length; i++) {
 // select all the buttons!
 const buttons = divCards.querySelectorAll('.delete');
 // make out delete function
-function deleteCard() {
-  console.log('To be deleted!');
-  const button = divCards.querySelector('button');
-  button.parentElement.remove();
+function deleteCard(event) {
+  const button = event.currentTarget;
+  button.parentElement.children[0].classList.toggle('hidden');
+  button.parentElement.children[1].classList.toggle('hidden');
+  if (button.innerText == 'Hide') {button.innerText = 'Show'} else {button.innerText = 'Hide'};
 }
 
 // loop over them and attach a listener
