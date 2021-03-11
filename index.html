@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Dom Cardio</title>
   <link rel="stylesheet" href="./base.css">
+  <script src="./DOM-Cardio_0310.js" defer></script>
 </head>
 
 <body>
-  <script src="./DOM-Cardio_0310.js"></script>
 
   <style>
     .cards {
@@ -30,6 +30,12 @@
 
     .hidden {
       visibility: hidden;
+    }
+
+    @media (min-width: 800px) {
+      .cards {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
   </style>
 

@@ -24,7 +24,7 @@ const myLi = liHtmlFragment.querySelectorAll('li');
 // for (let i = (myLi.length - 1); i >= 0; i--) {
 //   myUl.insertAdjacentElement('afterbegin', myLi[i]);
 // }
-myUl.innerHTML = liHtml;
+myUl.innerHTML = liHtml; 
 
 // create an image
 // set the source to an image
@@ -119,9 +119,11 @@ const buttons = divCards.querySelectorAll('.delete');
 // make out delete function
 function deleteCard(event) {
   const button = event.currentTarget;
-  button.parentElement.children[0].classList.toggle('hidden');
-  button.parentElement.children[1].classList.toggle('hidden');
+  // button.parentElement.children[0].classList.toggle('hidden');
+  // button.parentElement.children[1].classList.toggle('hidden');
   if (button.innerText == 'Hide') {button.innerText = 'Show'} else {button.innerText = 'Hide'};
+  button.closest('.playerCard').children[0].classList.toggle('hidden');
+  button.closest('.playerCard').children[1].classList.toggle('hidden');
 }
 
 // loop over them and attach a listener
