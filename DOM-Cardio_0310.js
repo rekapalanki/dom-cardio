@@ -119,9 +119,11 @@ const buttons = divCards.querySelectorAll('.delete');
 // make out delete function
 function deleteCard(event) {
   const button = event.currentTarget;
-  button.parentElement.children[0].classList.toggle('hidden');
-  button.parentElement.children[1].classList.toggle('hidden');
+  // button.parentElement.children[0].classList.toggle('hidden');
+  // button.parentElement.children[1].classList.toggle('hidden');
   if (button.innerText == 'Hide') {button.innerText = 'Show'} else {button.innerText = 'Hide'};
+  button.closest('.playerCard').children[0].classList.toggle('hidden');
+  button.closest('.playerCard').children[1].classList.toggle('hidden');
 }
 
 // loop over them and attach a listener
