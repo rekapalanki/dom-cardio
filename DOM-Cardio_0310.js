@@ -24,7 +24,7 @@ const myLi = liHtmlFragment.querySelectorAll('li');
 // for (let i = (myLi.length - 1); i >= 0; i--) {
 //   myUl.insertAdjacentElement('afterbegin', myLi[i]);
 // }
-myUl.innerHTML = liHtml;
+myUl.innerHTML = liHtml; 
 
 // create an image
 // set the source to an image
